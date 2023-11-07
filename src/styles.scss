@@ -21,11 +21,11 @@ body {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -15px;
- }
+}
 
- .title {
-    @include fontSize(14,$font-semibold-weight,$chinese-black);
- }
+.title {
+    @include fontSize(14, $font-semibold-weight, $chinese-black);
+}
 
 .icon-color {
     color: $dark-gray;
@@ -41,7 +41,8 @@ body {
 }
 
 .charts-heading {
-    @include fontSize(12,$font-semibold-weight,$chinese-black);
+    @include fontSize(12, $font-semibold-weight, $chinese-black);
+
     &-container {
         display: flex;
         justify-content: space-between;
@@ -49,5 +50,5 @@ body {
 }
 
 .side-text {
-    @include fontSize(12,$font-semibold-weight,$dark-gray);
+    @include fontSize(12, $font-semibold-weight, $dark-gray);
 }

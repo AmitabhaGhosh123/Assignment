@@ -7,22 +7,23 @@ import { RecentOrdersService } from 'src/app/services/recent-orders/recent-order
   styleUrls: ['./recent-orders.component.scss']
 })
 export class RecentOrdersComponent implements OnInit {
-  
-  allOrders:any = [];
 
-  constructor(private ordersService:RecentOrdersService) {}
+  allOrders: any = [];
+
+  constructor(private ordersService: RecentOrdersService) { }
 
   ngOnInit(): void {
     this.getRecentOrders();
   }
 
+  /*function to get recent orders*/
   getRecentOrders() {
-    this.ordersService.getRecentOrders().subscribe(orders=>{
+    this.ordersService.getRecentOrders().subscribe(orders => {
       this.allOrders = orders;
     },
-    (error)=>{
-      this.allOrders = [];
-    })
+      (error) => {
+        this.allOrders = [];
+      })
   }
 
 }

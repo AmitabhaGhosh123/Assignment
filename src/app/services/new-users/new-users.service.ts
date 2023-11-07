@@ -8,13 +8,13 @@ import { CONSTANTS } from 'src/app/constants';
 })
 export class NewUsersService {
 
-  constructor(private _http:HttpClient) { }
+  constructor(private _http: HttpClient) { }
 
   getUsersData() {
     return this._http.get(CONSTANTS.API_URL)
       .pipe(
-        map((data:any)=>{
-          if(data && data['new_users']) {
+        map((data: any) => {
+          if (data && data['new_users']) {
             return data['new_users']
           }
           else {

@@ -109,7 +109,8 @@ th {
    }
 }
 
-.order-number,.shipping-header {
+.order-number,
+.shipping-header {
    width: 5%;
 }
 
@@ -117,11 +118,13 @@ th {
    width: 10%;
 }
 
-.customer-header,.product-header,.date-header {
+.customer-header,
+.product-header,
+.date-header {
    width: 15%;
 }
 
-.date-header,.tracking-header {
+.date-header,
+.tracking-header {
    width: 20%;
 }
-

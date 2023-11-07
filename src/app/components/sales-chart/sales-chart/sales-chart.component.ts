@@ -14,6 +14,7 @@ export class SalesChartComponent implements OnInit {
     this.createSalesChart();
   }
 
+  /*function to create line chart*/
   createSalesChart() {
 
     Chart.register(

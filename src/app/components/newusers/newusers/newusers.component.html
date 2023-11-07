@@ -11,8 +11,7 @@
           <div class="new-user-country">{{user.country}}</div>
         </div>
         <div class="new-user-progress-column">
-          <div class="progress" [ngStyle]="{'width': user.progress + '%'}" id="progress-{{i}}"
-            [ngClass]="{'red-progress': user.progress < 30,'yellow-progress': user.progress >= 30 && user.progress < 40,
+          <div class="progress" [ngStyle]="{'width': user.progress + '%'}" id="progress-{{i}}" [ngClass]="{'red-progress': user.progress < 30,'yellow-progress': user.progress >= 30 && user.progress < 40,
             'blue-progress': user.progress >= 70, 'green-progress': user.progress >= 50 && user.progress < 70, 
             'gray-progress': user.progress >= 40 && user.progress < 50}"></div>
           <span class="new-user-name progress-percentage">{{user.progress}}%</span>

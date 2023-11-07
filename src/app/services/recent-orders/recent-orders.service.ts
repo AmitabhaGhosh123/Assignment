@@ -8,19 +8,19 @@ import { CONSTANTS } from 'src/app/constants';
 })
 export class RecentOrdersService {
 
-  constructor(private _http:HttpClient) { }
+  constructor(private _http: HttpClient) { }
 
   getRecentOrders() {
     return this._http.get(CONSTANTS.API_URL)
-    .pipe(
-      map((data:any)=>{
-        if(data && data['recent_orders']) {
-          return data['recent_orders']
-        }
-        else {
-          return [];
-        }
-      })
-    )
+      .pipe(
+        map((data: any) => {
+          if (data && data['recent_orders']) {
+            return data['recent_orders']
+          }
+          else {
+            return [];
+          }
+        })
+      )
   }
 }

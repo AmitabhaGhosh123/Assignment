@@ -16,6 +16,7 @@ export class DataCardsComponent implements OnInit {
     this.getTopCardsData();
   }
 
+  /*function to get data for top cards */
   getTopCardsData() {
     this.topCardsService.getCardsData().subscribe((cards)=>{
       this.allCards = cards;

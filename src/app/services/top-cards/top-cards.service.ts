@@ -8,13 +8,13 @@ import { CONSTANTS } from 'src/app/constants';
 })
 export class TopCardsService {
 
-  constructor(private _http:HttpClient) { }
+  constructor(private _http: HttpClient) { }
 
   getCardsData() {
     return this._http.get(CONSTANTS.API_URL)
       .pipe(
-        map((data:any)=>{
-          if(data && data['top_cards']) {
+        map((data: any) => {
+          if (data && data['top_cards']) {
             return data['top_cards']
           }
           else {

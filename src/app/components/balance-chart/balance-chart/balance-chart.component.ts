@@ -14,6 +14,7 @@ export class BalanceChartComponent implements OnInit {
     this.createBarChart();
   }
 
+  /* function to create bar chart */
   createBarChart() {
 
     const balanceData = {

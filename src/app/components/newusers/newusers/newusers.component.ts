@@ -16,6 +16,7 @@ export class NewusersComponent implements OnInit {
     this.getNewUsersData();
   }
 
+  /*function to get list of new users*/
   getNewUsersData() {
     this.newUsersService.getUsersData().subscribe(users=>{
       this.allUsers = users;

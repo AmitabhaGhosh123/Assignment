@@ -10,25 +10,26 @@ export class ProductChartComponent implements OnInit {
 
   doughnutchart: any;
 
-  ngOnInit(): void {    
+  ngOnInit(): void {
     this.createDoughnutChart();
   }
 
+  /*function to create doughnut chart*/
   createDoughnutChart() {
 
     const productData = {
       datasets: [{
-        data: [300,200,100],
+        data: [300, 200, 100],
         backgroundColor: [
           'rgb(0, 0, 255)',
           'rgb(109, 109, 227)',
           'rgb(71, 71, 165)'
         ],
         borderWidth: 0
-      }],  
+      }],
     };
 
-    const options:any = {
+    const options: any = {
       cutout: 55,
       responsive: false,
       layout: {
@@ -43,7 +44,7 @@ export class ProductChartComponent implements OnInit {
         doughnutlabel: {
           labels: [
             {
-              font:{
+              font: {
                 weight: '600',
               }
             }
@@ -52,18 +53,18 @@ export class ProductChartComponent implements OnInit {
       },
       events: [],
       animation: {
-        onComplete: function(chart:any) {
+        onComplete: function (chart: any) {
           var ctx = chart.chart.ctx;
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
           ctx.fillStyle = '#000';
-          ctx.font ='20px Poppins';
+          ctx.font = '20px Poppins';
           var width = chart.chart.width;
           var height = chart.chart.height;
           var midX = width / 2;
           var midY = height / 2;
           ctx.fillText('50%', midX, midY);
-          ctx.font ='12px Poppins';
+          ctx.font = '12px Poppins';
           ctx.fillStyle = '#a9a9a9';
           ctx.fillText('Popular Items', midX, midY + 20);
         }

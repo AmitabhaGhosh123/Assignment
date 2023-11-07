@@ -1,0 +1,39 @@
+@import "../../../styles/variables";
+@import "../../../mixins/mixins";
+
+.card {
+  background: $white;
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  padding: 16px;
+  width: 280px;
+  height: 150px;
+
+  &.active {
+    background: $blue;
+
+    .percentage,
+    .header-text,
+    .icon-color {
+      color: $white;
+    }
+  }
+}
+
+.percentage {
+  @include fontSize(24, $font-medium-weight, $blue);
+
+  &-value {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.header-text {
+  @include fontSize(12, $font-medium-weight, $black);
+}
+
+.sub-header-text {
+  @include fontSize(12, $font-normal-weight, $dark-gray);
+}

@@ -1,0 +1,49 @@
+<div class="recent-orders-card">
+  <div class="title">Recent Order</div>
+  <table class="table-wrapper">
+    <div class="table-child">
+      <tr class="table-header-row">
+        <th>#</th>
+        <th>Customer</th>
+        <th>Products</th>
+        <th>Delivery Date</th>
+        <th>Status</th>
+        <th>Tracking No#</th>
+        <th>Shipping</th>
+        <th></th>
+      </tr>
+      <tbody>
+        <tr *ngFor="let order of allOrders; let i = index">
+          <td>{{i}}</td>
+          <td>{{order.name}}</td>
+          <td>{{order.product}}</td>
+          <td>{{order.delivery_date | date: "d MMM, y"}}</td>
+          <td>
+            <div class="state" [ngClass]="{'status-paid': order.status === 'Paid',
+              'status-failed': order.status === 'Failed',
+              'status-pending': order.status === 'Pending'}">
+              {{order.status}}</div>
+          </td>
+          <td>{{order.tracking_no}}</td>
+          <td>{{order.shipping === true ? 'Yes' : 'No'}}</td>
+          <td>
+            <a class="icon-color" href="#order-popup-{{i}}">
+              <i class="fa-solid fa-xmark fa-2xs"></i>
+            </a>
+            <div id="order-popup-{{i}}" class="overlay">
+              <div class="popup">
+                <a class="close" href="#">&times;</a>
+                <div class="content">
+                  Customer Name : <span class="order-text">{{order.name}}</span>
+                </div>
+                <div class="content">
+                  Product Name : <span class="order-text">{{order.product}}</span>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </div>
+  </table>
+</div>

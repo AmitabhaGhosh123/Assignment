@@ -1,0 +1,32 @@
+@import "../../../styles/variables";
+@import "../../../mixins/mixins";
+
+.income-legend {
+   background: $blue;
+   border-radius: 5px;
+   display: inline-block;
+   max-width: 20px;
+    .text {
+        @include fontSize(12,$font-normal-weight,$chinese-black);
+        margin-left: 22px;
+    }
+}
+
+.borrow-legend {
+   background: $dark-gray;
+   border-radius: 5px;
+   display: inline-block;
+   max-width: 20px;
+   margin-left: 52px;
+   .text {
+      @include fontSize(12,$font-normal-weight,$chinese-black);
+      margin-left: 25px;
+    }
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
+}
+

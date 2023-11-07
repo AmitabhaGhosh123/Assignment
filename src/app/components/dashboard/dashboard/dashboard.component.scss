@@ -1,0 +1,28 @@
+@import "../../../styles/variables";
+
+.header-section {
+   position: absolute;
+   background: $white;
+   width: 100%;
+   padding-left: 50px;
+}
+
+.main-content {
+   display: flex;
+}
+
+.container {
+   padding-top: 30px;
+   margin: 60px 0 0 60px;
+   width: 100%;
+   max-height: calc(100vh - 50px);
+   overflow-y: auto;
+}
+
+.orders-row {
+   margin-top: 20px;
+}
+
+.charts-row {
+   margin-top: 10px;
+}

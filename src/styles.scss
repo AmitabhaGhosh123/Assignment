@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./app/styles/variables";
+@import "../src/app/mixins/mixins";
+@import url("https://fonts.googleapis.com/css?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: $main-content-background;
+    overflow: hidden;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+ }
+
+ .title {
+    @include fontSize(14,$font-semibold-weight,$chinese-black);
+ }
+
+.icon-color {
+    color: $dark-gray;
+}
+
+.chart-container {
+    max-width: 600px;
+    height: 300px;
+    padding: 30px;
+    background: $white;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+.charts-heading {
+    @include fontSize(12,$font-semibold-weight,$chinese-black);
+    &-container {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.side-text {
+    @include fontSize(12,$font-semibold-weight,$dark-gray);
+}

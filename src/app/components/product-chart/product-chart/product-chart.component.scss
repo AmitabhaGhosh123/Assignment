@@ -1,0 +1,51 @@
+@import "../../../styles/variables";
+@import "../../../mixins/mixins";
+
+.product-chart-container {
+    max-width: 310px;
+    height: 300px;
+    padding: 30px;
+    background: $white;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+.custom-legend {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.legend {
+    &-item {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+    }
+
+    &-text {
+        @include fontSize(12, $font-semibold-weight, $dark-gray);
+    }
+}
+
+.circle {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+
+    &-men {
+        background-color: rgb(0, 0, 255);
+    }
+
+    &-electronics {
+        background-color: rgb(109, 109, 227);
+    }
+
+    &-women {
+        background-color: rgb(71, 71, 165);
+    }
+}

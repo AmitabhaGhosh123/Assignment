@@ -1,0 +1,106 @@
+@import "../../../styles/variables";
+@import "../../../mixins/mixins";
+
+:root {
+   --progress-width: 100%; /* Default value for the progress bar */
+}
+
+.new-users {
+   &-card {
+      background: $white;
+      box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+      padding: 16px;
+      width: 450px;
+   }
+
+   &-list {
+      padding: 10px 0 10px 0;
+      max-height: 330px;
+      overflow-y: auto;
+   }
+
+   &-row {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-top: .5px solid $isabelline;
+   }
+}
+
+.new-user {
+   &-name {
+      @include fontSize(12, $font-semibold-weight, $chinese-black);
+   }
+
+   &-country {
+      @include fontSize(12, $font-normal-weight, $dark-gray);
+   }
+
+   &-info-column {
+      width: 100px;
+   }
+
+   &-progress-column {
+      width: 150px;
+      display: flex;
+      align-items: center;
+   }
+
+   &-column,
+   &-active-column {
+      width: 50px;
+   }
+}
+
+.user {
+   &-active {
+      background: $blue;
+      border-radius: 5px;
+
+      .text {
+         @include fontSize(12, $font-normal-weight, $white);
+      }
+   }
+
+   &-inactive {
+      background: $gray;
+      border-radius: 5px;
+
+      .text {
+         @include fontSize(12, $font-normal-weight, $chinese-black);
+      }
+   }
+}
+
+.active-status {
+   padding-left: 8px;
+   padding-bottom: 2px;
+}
+
+.progress {
+   border-radius: 3px;
+   height: 3px;
+    &-percentage {
+      margin-left: 5px;
+    }
+}
+
+.red-progress {
+   background: $red;
+}
+
+.blue-progress {
+   background: $blue;
+}
+
+.yellow-progress {
+   background: $yellow;
+}
+
+.green-progress {
+   background: $green;
+}
+
+.gray-progress {
+   background: $gray;
+}

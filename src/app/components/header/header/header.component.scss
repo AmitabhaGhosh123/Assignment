@@ -1,0 +1,67 @@
+@import "../../../styles/variables";
+@import "../../../mixins/mixins";
+
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background: $white;
+    padding: 10px 10px 0 10px;
+
+    .header-icons {
+      flex: 0 0 50%;
+
+      img {
+        width: 30px;
+        height: auto;
+        cursor: pointer;
+      }
+
+      .icons-container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .icon {
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+}
+
+.search {
+  &-container {
+    flex: 0 0 50%;
+  }
+
+  &-box {
+    display: flex;
+    align-items: center;
+
+    input {
+      @include fontSize(12, $font-medium-weight, $dark-gray);
+      margin-left: 15px;
+    }
+  }
+}
+
+.user-name {
+  @include fontSize(12, $font-medium-weight, $black);
+  margin-right: 5px;
+
+  &-container {
+    margin-left: 5px;
+  }
+}
+
+.user-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

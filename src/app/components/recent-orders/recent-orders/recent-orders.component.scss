@@ -6,7 +6,7 @@
    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.2);
    border-radius: 3px;
    padding: 16px;
-   width: 700px;
+   width: 100%;
 }
 
 .table {
@@ -44,18 +44,21 @@ th {
       background: $green;
       padding-left: 10px;
       padding-right: 10px;
+      max-width: 50px;
    }
 
    &-failed {
       background: $red;
       padding-left: 10px;
       padding-right: 10px;
+      max-width: 60px;
    }
 
    &-pending {
       background: $blue;
       padding-left: 5px;
       padding-right: 5px;
+      max-width: 60px;
    }
 }
 
@@ -105,3 +108,20 @@ th {
       overflow: auto;
    }
 }
+
+.order-number,.shipping-header {
+   width: 5%;
+}
+
+.status-header {
+   width: 10%;
+}
+
+.customer-header,.product-header,.date-header {
+   width: 15%;
+}
+
+.date-header,.tracking-header {
+   width: 20%;
+}
+

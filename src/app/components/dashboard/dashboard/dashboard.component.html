@@ -12,13 +12,23 @@
     <main class="container">
        <app-data-cards></app-data-cards>
       <div class="row orders-row">
-        <app-recent-orders></app-recent-orders>
-        <app-newusers></app-newusers>
+        <div class="recent-orders">
+          <app-recent-orders></app-recent-orders>
+        </div>
+        <div class="new-users">
+          <app-newusers></app-newusers>
+        </div>
       </div>
       <div class="row charts-row">
-        <app-sales-chart></app-sales-chart>
-        <app-balance-chart></app-balance-chart>
-        <app-product-chart></app-product-chart>
+        <div class="chart">
+          <app-sales-chart></app-sales-chart>
+        </div>
+        <div class="chart">
+          <app-balance-chart></app-balance-chart>
+        </div>
+        <div class="product-chart">
+          <app-product-chart></app-product-chart>
+        </div>
       </div>
     </main>
 </div>

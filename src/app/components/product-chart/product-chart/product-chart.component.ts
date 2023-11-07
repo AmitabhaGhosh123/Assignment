@@ -29,7 +29,8 @@ export class ProductChartComponent implements OnInit {
     };
 
     const options:any = {
-      cutout: 50,
+      cutout: 55,
+      responsive: false,
       layout: {
         padding: {
           top: 10,

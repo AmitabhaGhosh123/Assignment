@@ -1,0 +1,12 @@
+@import "../../../styles/variables";
+@import "../../../mixins/mixins";
+
+.custom-tooltip {
+    display: none;
+    position: absolute;
+    background-color: $white;
+    padding: 5px;
+    border-radius: 10px;
+    min-width: 100px;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.2);
+}

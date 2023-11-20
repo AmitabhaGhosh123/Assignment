@@ -121,16 +121,41 @@ export class SalesChartComponent implements OnInit {
             display: false,
           },
           tooltip: {
-            enabled: true,
-            borderColor: 'rgb(169, 169, 169)',
-            borderWidth: 1,
-            displayColors: false,
-            callbacks: {
-              label: function (context: any) {
-                let label = context.formattedValue;
-                return '$' + label;
-              },
-            },
+            enabled: false,
+            external: function (context) {
+              var tooltip = document.getElementById('customTooltip');
+              if (!tooltip) {
+                tooltip = document.createElement('div');
+                tooltip.id = 'customTooltip';
+                tooltip.style.backgroundColor = 'white';
+                tooltip.style.padding = '5px';
+                tooltip.style.borderRadius = '10px';
+                tooltip.style.boxShadow = '1px 1px 4px 0 rgba(0, 0, 0, 0.2)',
+                  tooltip.style.minWidth = '100px',
+                  tooltip.style.position = 'absolute';
+                tooltip.style.zIndex = '999';
+                document.body.appendChild(tooltip);
+              }
+
+              var index = context.tooltip.dataPoints[0].dataIndex;
+              var datasetIndex = context.tooltip.dataPoints[0].datasetIndex;
+              var value = '$' + context.chart.data.datasets[datasetIndex].data[index] + '.00';
+              var label = context.tooltip.dataPoints[0].label;
+
+              tooltip.innerHTML = '<div style="position:relative"></div>' +
+              `<div style="text-align:center;color:#0000ff">${value}</div>` + 
+              `<div style="text-align:center;color:#a9a9a9">${label}</div>` +
+              '<div style="position: absolute; width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid rgba(255, 255, 255, 1); left: 50%; transform: translateX(-50%); bottom: -5px;"></div></div>';
+              tooltip.style.bottom = '35%';
+              tooltip.style.left = '23%';
+              tooltip.style.display = 'block';
+
+              context.chart.canvas.addEventListener('mouseleave', function() {
+                if (tooltip) {
+                  tooltip.style.display = 'none';
+                }
+              });
+            }
           }
         },
         layout: {
